@@ -36,7 +36,7 @@ The game starts with **two rockets** attempting to **escape Earth’s atmosphere
 ## 🏁 Game End Conditions
 
 - ✅ **Win:** A player reaches the destination before their timer runs out.
-- 🏆 **Both Win:** If both players reach the destination, the one who arrives first wins.
+- 🏆 **Win:** If both players reach the destination, the one who arrives first wins.
 - ❌ **Lose:** If both players fail to reach in time, both lose the game.
 
 ---
@@ -55,7 +55,7 @@ The game starts with **two rockets** attempting to **escape Earth’s atmosphere
   - **P2 Color** – Player 2 chooses their rocket color.
 
 - **Returning to Main Menu:**
-  - Any player can press any button from the help section.
+  - Any player can press any button from the help section to reach back to Main Menu.
 
 ---
 
