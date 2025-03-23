@@ -4,7 +4,11 @@
 
 **Cosmic Race** is a two-player space-themed arcade game built using the **Arduino Nano**, **TFT Display**, and **Rotary Encoders**. In this game, players control rockets that are racing to escape the Earth’s atmosphere and traverse through challenging space environments. Strategy, speed, and timing are key!
 
----
+### Game Lore
+Far in the future, humans discovered how to travel at the speed of light. Two brave pilots launched into space, racing to escape Earth’s atmosphere. But something strange happened… The faster they went, the slower time moved. They weren’t just flying through space — they were flying through time. Now, every move they make decides not just how far they go, but when they end up.
+
+Will they reach their destination before time runs out… or be lost forever in the race through time and space?
+
 
 ## 🎮 Game Overview
 
@@ -20,44 +24,58 @@ The game starts with **two rockets** attempting to **escape Earth’s atmosphere
 
 ---
 
-## 🧠 Game Mechanics
 
-- Players must **reach the destination within a time limit**.
-- **Abilities** can be collected to modify the game:
-  - **Ability 1:** Increases your time limit.
-  - **Ability 2:** Decreases the opponent’s time limit.
-- **Obstacles** will appear during the journey:
-  - Colliding with them **freezes** your movement for a short duration.
-- **Each player has an individual time display** on their side of the screen.
-- The player who **reaches the goal first** (within the time limit) **wins**.
+## 📜 Main Menu
 
----
+- **Help** – Explains how to play the game
+- **Start / Resume**
+- **Restart**
+- **P1 Color** – Choose Rocket color for Player 1
+- **P2 Color** – Choose Rocket color for Player 2
 
-## 🏁 Game End Conditions
+> Start / Resume / Restart require both players to press their buttons simultaneously.  
+> Help can be accessed by either player, P1 Color and P2 Color accessed by respective players.
+> During Game Holding both button for 2 seconds returns to the main menu.
 
-- ✅ **Win:** A player reaches the destination before their timer runs out.
-- 🏆 **Win:** If both players reach the destination, the one who arrives first wins.
-- ❌ **Lose:** If both players fail to reach in time, both lose the game.
 
----
+
+## 🎯 Game Objective
+
+1. **First to reach 100m within 120 seconds wins!**
+2. Avoid obstacles — hitting one will **freeze your movement temporarily**, but your timer **keeps running**.
+3. Collect **green dots (boosters)** to **add time** to your timer.
+4. Use **attack** (press button) to **freeze opponent** for 3 seconds.
+   - **Cooldown:** You can attack only once every **15 seconds**.
 
 ## 🕹️ Controls
 
 - Players use **rotary encoders** to move:
   - **Clockwise:** Move Right
-  - **Counter-Clockwise:** Move Left
+  - **Counter-Clockwise:** Move
+- Attck Can be done by Pressing the button
+ 
 
-- **Main Menu Controls:**
-  - **Help** – View instructions.
-  - **Start/Resume** – Both players must press their buttons **simultaneously**.
-  - **Restart** – Also requires both players to press together.
-  - **P1 Color** – Player 1 chooses their rocket color.
-  - **P2 Color** – Player 2 chooses their rocket color.
+## Game Mechanics
 
-- **Returning to Main Menu:**
-  - Any player can press any button from the help section to reach back to Main Menu.
+- **Distance:** Starts from 0m → reach **100m** to win.
+- **Timer:** Each player has **120 seconds**.
+- **Collision:** Hitting an obstacle **freezes your distance** temporarily for 5sec.
+- **Booster (Green Dot):** Increases your **remaining time**.
+- **Attack:** 
+  - Pressing your button freezes opponent for **3 seconds**
+  - **Cooldown:** 15 seconds between attacks
 
----
+
+
+## 🏁 Game Win Conditions
+
+- **If one player reaches 100m before time ends**, they win.
+- **If both reach 100m**, the player with **more time remaining** wins.
+- **If both run out of time** before reaching 100m, **both lose**.
+- **If one runs out of time**, we wait for the other:
+  - If second player reaches 100m, they win.
+  - If not, **both lose**.
+
 
 ## 📟 Hardware Components
 
@@ -71,7 +89,7 @@ The game starts with **two rockets** attempting to **escape Earth’s atmosphere
 | Push Buttons         | 2        |
 | Connecting Wires     | As needed |
 
----
+
 
 ## 📐 Implementation
 
@@ -84,14 +102,14 @@ The game logic is implemented on the Arduino Nano. The TFT display renders the g
 - **Collision Detection and Timer Management**
 - **Win/Lose Logic**
 
----
-
 ## 🧾 Project Structure
 
 ```plaintext
 Cosmic-Race/
-├── images/                 # Game assets and rocket icons (optional)
-├── CosmicRace.ino         # Main Arduino sketch
-├── README.md              # This file
-├── libraries/             # Required libraries (TFT, encoder, etc.)
-└── docs/                  # Any additional documentation or help files
+├──  rocket-red.h                
+├── rocket-blue.h
+├── rocket-yellow.h
+├── satellite.h
+├── meteoroid.h
+├── CosmicRace.ino         
+└── README.md              
